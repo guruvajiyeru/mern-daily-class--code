@@ -1,0 +1,20 @@
+label{
+    color: beige;
+    font-weight: bold;
+    font-size:25px ;
+    
+}
+label::after{
+    content:"*";
+    color: black;
+}
+label:first-of-type::before{
+    content: "🤷‍♀️";
+}
+label:last-of-type::before{
+    content: "🤐";
+}
+button{
+    background-color: blueviolet;
+    padding: 10px 20px;
+}
