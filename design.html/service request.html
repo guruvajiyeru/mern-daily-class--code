@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Request Form</title>
+
+    <style>
+        /* Page Styling */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #dfe9f3, #ffffff);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Form Container */
+        .container {
+            width: 420px;
+            margin: 60px auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Labels */
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        /* Inputs */
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        /* Focus Effects */
+        input:focus, select:focus, textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,123,255,0.3);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /* Radio Buttons */
+        .radio-group {
+            margin-top: 8px;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .radio-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        /* Button */
+        .btn {
+            margin-top: 20px;
+            width: 100%;
+            background: linear-gradient(to right, #007BFF, #0056b3);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #0056b3, #003f7f);
+            transform: scale(1.02);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Service Request Form</h2>
+
+    <form id="serviceForm">
+
+        <!-- Customer Name -->
+        <label for="name">Customer Name</label>
+        <input type="text" id="name" name="customer_name"
+               placeholder="Enter your name" required>
+
+        <!-- Contact Number -->
+        <label for="phone">Contact Number</label>
+        <input type="tel" id="phone" name="contact_number"
+               placeholder="Enter 10-digit mobile number"
+               pattern="[0-9]{10}" required>
+
+        <!-- Issue Type -->
+        <label for="issue">Issue Type</label>
+        <select id="issue" name="issue_type" required>
+            <option value="">-- Select Issue --</option>
+            <option value="laptop">Laptop Repair</option>
+            <option value="internet">Internet Issue</option>
+            <option value="software">Software Problem</option>
+            <option value="hardware">Hardware Issue</option>
+        </select>
+
+        <!-- Description -->
+        <label for="desc">Description</label>
+        <textarea id="desc" name="description" rows="4"
+                  placeholder="Describe your issue..." required></textarea>
+
+        <!-- Priority -->
+        <label>Priority</label>
+        <div class="radio-group">
+            <label><input type="radio" name="priority" value="low" required> Low</label>
+            <label><input type="radio" name="priority" value="medium"> Medium</label>
+            <label><input type="radio" name="priority" value="high"> High</label>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn">Submit</button>
+
+    </form>
+</div>
+
+<!-- JavaScript Validation -->
+<script>
+    document.getElementById("serviceForm").addEventListener("submit", function(e) {
+        const phone = document.getElementById("phone").value;
+
+        if (!/^[0-9]{10}$/.test(phone)) {
+            alert("Please enter a valid 10-digit phone number");
+            e.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>
