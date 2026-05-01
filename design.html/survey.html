@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f4f8;
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 20px;
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .rating {
+      margin-bottom: 12px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>Survey Form</h2>
+
+  <form>
+
+    <label>User Name:</label>
+    <input type="text" name="username" placeholder="Enter your name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="Enter your email" required>
+
+    <label>Feedback:</label>
+    <textarea name="feedback" rows="4" placeholder="Write your feedback" required></textarea>
+
+    <label>Rating:</label>
+    <div class="rating">
+    <label><input type="radio" name="rating" value="1">1</label>
+     <label><input type="radio" name="rating" value="2">2</label>
+     <label><input type="radio" name="rating" value="3">3</label>
+      <label><input type="radio" name="rating" value="4">4</label>
+     <label><input type="radio" name="rating" value="5">5</label>
+    </div>
+    <label>Favorite Technology:</label>
+    <select name="tech" required>
+      <option value="">--Select--</option>
+      <option>AI</option>
+      <option>Web Development</option>
+      <option>Mobile Apps</option>
+      <option>Cloud Computing</option>
+    </select>
+
+    <label>
+      <input type="checkbox" name="subscribe"> Subscribe to updates
+    </label>
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+  </form>
+
+</div>
+
+</body>
+</html>
